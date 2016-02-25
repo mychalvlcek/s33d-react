@@ -1,0 +1,43 @@
+@Sidebar-background: #2c3e50;
+@Sidebar-background-secondary: #374d63;
+
+// sidebar controls
+html.default body #sidebar .sidebar-controls-container {
+  width: 250px;
+  height: 35px;
+  display: table;
+  visibility: visible;
+  background: @Sidebar-background-secondary;
+  & > .sidebar-controls {
+    display: table-row;
+
+    & > .sidebar-control-btn {
+      border: none;
+      outline: 0;
+      font-size: 16px;
+      cursor: pointer;
+      background: 0 0;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      border-right: 1px solid darken(@Sidebar-background-secondary, 4%);
+
+      &:hover {
+        background: rgba(0, 0, 0, .04);
+      }
+
+      &.active {
+        background: #ba4e3b !important;
+
+        & > a {
+          color: #FA7252;
+        }
+      }
+
+      & > a {
+        outline: 0;
+        color: #b2b2b2;
+      }
+    }
+  }
+}

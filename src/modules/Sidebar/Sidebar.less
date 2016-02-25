@@ -1,0 +1,217 @@
+//@Sidebar-itemHeight: 24px;
+//
+//.Sidebar {
+//	&-itemLink {
+//		height: @Sidebar-itemHeight;
+//		line-height: @Sidebar-itemHeight;
+//		padding-right: 28px;
+//	}
+//
+//	&-itemIcon {
+//		font-size: 26px;
+//		color: #fff;
+//	}
+//
+//	&-itemArrow {
+//		height: @Sidebar-itemHeight;
+//		line-height: @Sidebar-itemHeight;
+//	}
+//}
+
+@Navbar-height: 60px;
+@Navbar-bg: hsla(0, 0%, 100%, .9);
+
+@Sidebar-background: #2c3e50;
+@Sidebar-background-secondary: lighten(#374d63, 5%);
+@Muted-text: #6c7885;
+@Sidebar-text: #b2b2b2;
+
+html.default body #sidebar {
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	position: fixed;
+	//overflow: hidden;
+	transition: all .3s ease;
+	left: -250px;
+	width: 250px;
+	background: @Sidebar-background;
+}
+
+@media (min-width: 990px) {
+	html.default body #sidebar {
+		left: 0;
+	}
+}
+
+// toggle nav state
+html.default body #container.container-open>#sidebar {
+	left: 0;
+}
+
+html.default body #container.container-open #rubix-nav-header {
+	margin-left: 250px;
+	margin-right: -250px;
+}
+
+html.default body #container.container-open>#body {
+	margin-left: 250px;
+	margin-right: -250px;
+}
+
+// sidebar avatar
+html.default body #sidebar #avatar {
+	height: @Navbar-height;
+	background: @Sidebar-background-secondary;
+}
+
+html.default body #sidebar #avatar img {
+	top: 20px;
+	height: 20px;
+	position: relative;
+}
+
+html.default body #sidebar #sidebar-container {
+	bottom: 0;
+	width: 250px;
+	//overflow: hidden;
+	overflow: scroll;
+	position: absolute;
+	top: 95px;
+}
+
+html.default body #sidebar #sidebar-container > .sidebar {
+	left: 0%;
+	visibility: visible;
+	transition: all 0.3s ease;
+	// inline styles above
+	top: 0;
+	bottom: 0;
+	width: 250px;
+	//overflow: hidden;
+	position: absolute;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+html.default body .sidebar-header {
+	line-height: 1;
+	font-size: 12px;
+	padding-top: 25px;
+	font-weight: 700;
+	padding-bottom: 12px;
+	color: rgba(137, 148, 155, .4);
+}
+
+// navbar
+html.default body #navbar {
+	width: 100%;
+}
+
+html.default body #rubix-nav-header {
+	transition: all .3s ease;
+	border: none;
+	margin-left: 0;
+	background-color: @Navbar-bg;
+	box-shadow: 1px 0 5px rgba(0, 0, 0, .2);
+}
+
+@media (min-width: 990px) {
+	html.default body #rubix-nav-header {
+		margin-left: 250px;
+	}
+}
+
+html.default body #rubix-nav-header .navbar-brand {
+	width: 100%;
+	text-align: center;
+	color: @Sidebar-text;
+}
+
+html.default body #rubix-nav-header .navbar-brand > img {
+	top: -3px;
+	position: relative;
+}
+
+// collapse btn
+html.default body #rubix-nav-header .navbar-nav > li.sidebar-btn > a {
+	width: 80px;
+	font-size: 30px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+html.default body #rubix-nav-header .navbar-nav > li.sidebar-btn > a {
+	color: fade(@Sidebar-background, 80%);
+}
+
+html.default body #rubix-nav-header .navbar-nav > li.sidebar-btn > a:hover {
+	color: darken(fade(@Sidebar-background, 80%), 10%);
+}
+
+// right nav
+
+html.default body #rubix-nav-header .navbar-content {
+	height: @Navbar-height;
+}
+
+html.default body #rubix-nav-header .navbar-nav:first-child {
+	margin-left: -25px;
+}
+
+html.default body #rubix-nav-header .navbar-nav {
+	margin: 0;
+	display: inline-block;
+}
+
+@media (min-width: 990px) {
+	.navbar-nav {
+		float: left;
+		margin: 0;
+	}
+}
+
+html.default body #rubix-nav-header .navbar-nav > li.divider {
+	height: @Navbar-height;
+	border: 1px solid rgba(139, 149, 153, .15);
+}
+
+@media (min-width: 990px) {
+	.navbar-nav > li {
+		float: left;
+	}
+}
+
+body #rubix-nav-header .navbar-nav > li > a {
+	height: @Navbar-height;
+	font-size: 26px;
+	background: 0 0;
+	text-align: center;
+	color: @Sidebar-text;
+}
+
+html.default body #rubix-nav-header .navbar-nav > li > a {
+	border: none;
+	padding: 15px;
+	display: block;
+}
+
+html.default body #rubix-nav-header .navbar-nav:last-child {
+	margin-right: -25px;
+}
+
+html.default body #rubix-nav-header .navbar-nav > li.active > a, html.default body #rubix-nav-header .navbar-nav > li > a {
+	height: @Navbar-height;
+	font-size: 26px;
+	background: 0 0;
+	text-align: center;
+	color: @Sidebar-text;
+}
+
+// colapsed flag menu
+html.default body #rubix-nav-header .navbar-nav > li {
+	float: left;
+}
+
+
+

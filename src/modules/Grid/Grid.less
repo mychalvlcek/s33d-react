@@ -1,0 +1,70 @@
+@Grid-borderColor: black;
+@Grid-header-bg: #f5f5f5;
+@Grid-text-color: #444;
+
+.Grid {
+	&-header {
+		//background-color: @Grid-header-bg;
+	}
+	color: @Grid-text-color;
+	//border: 1px solid @Grid-borderColor;
+	//&-itemLink {
+	//	height: @Sidebar-itemHeight;
+	//	line-height: @Sidebar-itemHeight;
+	//	padding-right: 28px;
+	//}
+	//
+	//&-itemIcon {
+	//	font-size: 26px;
+	//	color: #fff;
+	//}
+	//
+	//&-itemArrow {
+	//	height: @Sidebar-itemHeight;
+	//	line-height: @Sidebar-itemHeight;
+	//}
+	&-sortHeader {
+		cursor: pointer;
+		color: gray;
+	}
+
+	&-sortIndicator {
+		float: right;
+		position: relative;
+		top: 3px;
+		opacity: 0.3;
+
+		&--active {
+			opacity: 0.5;
+		}
+	}
+}
+
+#container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+// content
+html.default body #body {
+	left: 0;
+	flex: 1 0 auto;
+	-webkit-flex: 1 0 auto;
+	z-index: 100;
+	margin-left: 0;
+	position: relative;
+	transition: all .3s ease;
+	//background: #E9F0F5;
+	margin-top: 25px;
+	padding-bottom: 25px;
+}
+html.default body #navbar ~ #body {
+	padding-top: 25px;
+}
+
+@media (min-width: 990px) {
+	html.default body #sidebar ~ #body, html.default body #sidebar ~ #footer-container {
+		margin-left: 250px;
+	}
+}
